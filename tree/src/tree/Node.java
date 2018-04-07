@@ -1,12 +1,15 @@
 package tree;
 
-
 public class Node {
-    
-    Node NodeRigth=null;//child
-    Node NodeLeft=null;//child
-    person person=null;
-    Node parent=null;
+
+    Node NodeRigth = null;//child
+    Node NodeLeft = null;//child
+    person person = null;
+    Node parent = null;
+
+    public Node(person person) {
+        this.person = person;
+    }
 
     public Node getNodeRigth() {
         return NodeRigth;
@@ -24,11 +27,6 @@ public class Node {
         this.parent = parent;
     }
 
-
-    public Node(person person) {
-        this.person = person;
-    }
-
     public Node getNodeLeft() {
         return NodeLeft;
     }
@@ -37,7 +35,6 @@ public class Node {
         this.NodeLeft = NodeLeft;
     }
 
-
     public person getPerson() {
         return person;
     }
@@ -45,6 +42,5 @@ public class Node {
     public void setPerson(person person) {
         this.person = person;
     }
-    
-    
+
 }

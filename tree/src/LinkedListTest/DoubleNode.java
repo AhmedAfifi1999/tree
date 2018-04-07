@@ -1,18 +1,14 @@
 package LinkedListTest;
 
-
-
 public class DoubleNode {
+
     int grades;
     DoubleNode next;
     DoubleNode prei;
 
-    
- DoubleNode(int g) {
-grades=g;   
- }
-
-    
+    DoubleNode(int g) {
+        grades = g;
+    }
 
     public DoubleNode getNext() {
         return next;
@@ -32,9 +28,7 @@ grades=g;
 
     @Override
     public String toString() {
-        return grades+"";
+        return grades + "";
     }
-    
-    
-    
+
 }

@@ -2,6 +2,37 @@ package tree;
 
 public class Tree {
 
+    public static void main(String[] args) {
+        Tree tree = new Tree();
+        person p = new person("ahmed", 10);
+        person t = new person("walead", 20);
+        person y = new person("ali", 12);
+        person U = new person("Eyade", 6);
+        person Q = new person("eee", 16);
+
+        Node node = new Node(p);
+        Node node2 = new Node(t);
+        Node node3 = new Node(y);
+        Node node4 = new Node(U);
+
+        tree.addNode(node);
+        tree.addNode(node2);
+
+        tree.addNode(node3);
+        tree.addNode(node4);
+
+        tree.inorder(node);
+        System.out.println("//********/////////");
+        tree.delete(node2);
+        System.out.println("//********/////////");
+
+        tree.inorder(node);
+
+//.getPerson().getName()
+//  System.out.println(tree.Root.NodeRigth.NodeLeft.getPerson().getName());
+//tree.search(U);
+    }
+
     private Node Root = null;
     int Size = 0;
 
@@ -130,37 +161,6 @@ public class Tree {
 
         }
 
-    }
-
-    public static void main(String[] args) {
-        Tree tree = new Tree();
-        person p = new person("ahmed", 10);
-        person t = new person("walead", 20);
-        person y = new person("ali", 12);
-        person U = new person("Eyade", 6);
-        person Q = new person("eee", 16);
-
-        Node node = new Node(p);
-        Node node2 = new Node(t);
-        Node node3 = new Node(y);
-        Node node4 = new Node(U);
-
-        tree.addNode(node);
-        tree.addNode(node2);
-
-        tree.addNode(node3);
-        tree.addNode(node4);
-
-        tree.inorder(node);
-        System.out.println("//********/////////");
-        tree.delete(node2);
-        System.out.println("//********/////////");
-
-        tree.inorder(node);
-
-//.getPerson().getName()
-        //  System.out.println(tree.Root.NodeRigth.NodeLeft.getPerson().getName());
-        //tree.search(U);
     }
 
 }

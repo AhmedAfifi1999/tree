@@ -2,6 +2,32 @@ package LinkedListTest;
 
 public class linkedListeDouble<T> {
 
+    public static void main(String[] args) {
+        linkedListeDouble n = new linkedListeDouble(3);
+//        DoubleNode a = new DoubleNode("Gaza");
+//        DoubleNode b = new DoubleNode("rafah");
+//        DoubleNode c = new DoubleNode("zoom");
+//        DoubleNode d = new DoubleNode("tree");
+//        DoubleNode e = new DoubleNode("Gaza2");
+//        DoubleNode f = new DoubleNode("room");
+//-----------------
+        DoubleNode e = new DoubleNode(20);
+        DoubleNode f = new DoubleNode(10);
+        DoubleNode d = new DoubleNode(6);
+
+//        n.AddLast(a);
+//        n.AddLast(b);
+//        n.removeFirst();
+//        n.AddLast(c);
+//        n.AddLast(d);
+        n.insert(e);
+        n.insert(f);
+        n.insert(d);
+
+        System.out.println(n);
+
+    }
+
     DoubleNode First = null;
     DoubleNode Last = null;
     int size = 0;
@@ -132,39 +158,14 @@ public class linkedListeDouble<T> {
                     x = x.next;
                     x.prei = newNode;
                 }
-            } else if (newNode.grades > y.grades&&size>3) {
-            
-            newNode.next = null;
-            newNode.prei = x;
-            y = null;}
+            } else if (newNode.grades > y.grades && size > 3) {
+
+                newNode.next = null;
+                newNode.prei = x;
+                y = null;
+            }
             size++;
         }
-    }
-
-    public static void main(String[] args) {
-        linkedListeDouble n = new linkedListeDouble(3);
-//        DoubleNode a = new DoubleNode("Gaza");
-//        DoubleNode b = new DoubleNode("rafah");
-//        DoubleNode c = new DoubleNode("zoom");
-//        DoubleNode d = new DoubleNode("tree");
-//        DoubleNode e = new DoubleNode("Gaza2");
-//        DoubleNode f = new DoubleNode("room");
-        //-----------------
-        DoubleNode e = new DoubleNode(20);
-        DoubleNode f = new DoubleNode(10);
-        DoubleNode d = new DoubleNode(6);
-
-//        n.AddLast(a);
-//        n.AddLast(b);
-//        n.removeFirst();
-//        n.AddLast(c);
-//        n.AddLast(d);
-        n.insert(e);
-        n.insert(f);
-        n.insert(d);
-
-        System.out.println(n);
-
     }
 
 }
