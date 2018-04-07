@@ -25,7 +25,10 @@ public class person {
     public void setId(int id) {
         this.id = id;
     }
-    
 
-    
+    @Override
+    public String toString() {
+        return "name :" + Name + " id:" + id;
+    }
+
 }
