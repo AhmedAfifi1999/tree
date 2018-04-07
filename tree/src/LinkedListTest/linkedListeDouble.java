@@ -3,7 +3,7 @@ package LinkedListTest;
 public class linkedListeDouble<T> {
 
     public static void main(String[] args) {
-        linkedListeDouble n = new linkedListeDouble(3);
+        linkedListeDouble<DoubleNode> n = new linkedListeDouble<>(3);
 //        DoubleNode a = new DoubleNode("Gaza");
 //        DoubleNode b = new DoubleNode("rafah");
 //        DoubleNode c = new DoubleNode("zoom");
@@ -136,35 +136,50 @@ public class linkedListeDouble<T> {
 
     }
 
-    public void insert(DoubleNode newNode) {
+    /**
+     *
+     * @param newNode
+     * @return True if inserted and false if not inserted
+     */
+    public boolean insert(DoubleNode newNode) {
+        if (!Isfull()) {
+            if (IsEmpty()) {
+                First = newNode;
+                Last = newNode;
+                size++;
+                First.next = Last;
+                Last.prei = First;
+                return true;
+            } else {
+                DoubleNode currentNode = First;
+                int i = 0;
+                while (i++ < size) {
+                    if (currentNode.grades < newNode.grades) {
 
-        if (IsEmpty()) {
-            First = newNode;
-            Last = newNode;
-            size++;
-        } else {
-            DoubleNode x = First.next;
-            DoubleNode y = x.next;
-            if (newNode.grades > First.grades) {
-                insertFirst(newNode);
-                if (size > 3) {
-                    x.next = null;
+                        currentNode.prei.next = newNode;// نضع مؤشر النيكست للنود السابق على النود الجديدة
+                        currentNode.next.prei = newNode;// نضع مؤشر السابق للنود اللاحق على النود الجديدة
+
+                        newNode.next = currentNode;// نضع التالي هي النود ذات القيمة القليلة
+                        newNode.prei = currentNode.prei;//نضع السابق للنود الجديدة هوا السابق للنود القديمة
+
+                        size++;
+                        if (currentNode == Last) {
+                            Last = newNode;
+                        } else if (currentNode == First) {
+                            First = newNode;
+                        }
+
+                        return true;
+                    } else {
+                        currentNode = currentNode.next;
+                    }
+                    insertLast(newNode);
+                    return true;
                 }
-
-            } else if (newNode.grades > x.grades) {
-                newNode.next = x.next;
-                newNode.prei = x.prei;
-                if (size > 2) {
-                    x = x.next;
-                    x.prei = newNode;
-                }
-            } else if (newNode.grades > y.grades && size > 3) {
-
-                newNode.next = null;
-                newNode.prei = x;
-                y = null;
+                return false;
             }
-            size++;
+        } else {
+            return false;
         }
     }
 
