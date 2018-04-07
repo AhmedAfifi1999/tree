@@ -111,32 +111,33 @@ public class linkedListeDouble<T> {
     }
 
     public void insert(DoubleNode newNode) {
-        
+
         if (IsEmpty()) {
             First = newNode;
             Last = newNode;
             size++;
         } else {
             DoubleNode x = First.next;
-        DoubleNode y = x.next;
+            DoubleNode y = x.next;
             if (newNode.grades > First.grades) {
                 insertFirst(newNode);
-                if(size>3){
-                    x.next=null;
+                if (size > 3) {
+                    x.next = null;
                 }
 
             } else if (newNode.grades > x.grades) {
                 newNode.next = x.next;
                 newNode.prei = x.prei;
-
-                x=x.next;
-                x.prei=newNode;
-                
-            } else if (newNode.grades > y.grades) {
-            }
+                if (size > 2) {
+                    x = x.next;
+                    x.prei = newNode;
+                }
+            } else if (newNode.grades > y.grades&&size>3) {
+            
             newNode.next = null;
             newNode.prei = x;
-            y = null;
+            y = null;}
+            size++;
         }
     }
 
@@ -158,10 +159,9 @@ public class linkedListeDouble<T> {
 //        n.removeFirst();
 //        n.AddLast(c);
 //        n.AddLast(d);
-n.insert(e);
-n.insert(f);
-n.insert(d);
-
+        n.insert(e);
+        n.insert(f);
+        n.insert(d);
 
         System.out.println(n);
 
