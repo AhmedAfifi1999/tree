@@ -98,10 +98,8 @@ public class linkedListeDouble<T> {
         int i = 0;
         String All = "";
         DoubleNode Node = First;
-        while (true) {
-            if (i == size) {
-                break;
-            }
+        while (i!=3) {
+            
             All += " " + Node.toString();
             i++;
             Node = Node.next;
@@ -130,15 +128,14 @@ public class linkedListeDouble<T> {
                 if(First.next==null){
                 newNode.prei = First;
                 First.next=newNode;
+                newNode.next=null;
 
                 }else{
-                
-                newNode.next = First.next.next;
-                newNode.prei = First.next.prei;
-                if (size > 3) {
-                    x = x.next;
-                    x.prei = newNode;
-                }
+                x=First.next;
+                newNode.prei=First;
+                First.next=newNode;
+                newNode.next=x;
+                x.prei=newNode;
                 
                 }
             } else if (x.next==null||newNode.grades > x.next.grades&&size>3) {
