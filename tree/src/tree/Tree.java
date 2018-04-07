@@ -5,7 +5,7 @@ public class Tree {
     private Node Root = null;
     int Size = 0;
 
-    public void AddpPerson(Node newNode) {
+    public void addNode(Node newNode) {
 
         if (Root == null) {
             Root = newNode;
@@ -85,7 +85,7 @@ public class Tree {
         Node Save;
         if (Node.NodeLeft == null && Node.NodeRigth == null) {//لما يكون المطلوب حذفه اخر عنصر في الشجرة...
             Node = null;
-        } else if (Node.NodeLeft != null && Node.NodeRigth != null ) {
+        } else if (Node.NodeLeft != null && Node.NodeRigth != null) {
             Node x;
             x = Node.NodeRigth;
             while (true) {
@@ -145,11 +145,11 @@ public class Tree {
         Node node3 = new Node(y);
         Node node4 = new Node(U);
 
-        tree.AddpPerson(node);
-        tree.AddpPerson(node2);
+        tree.addNode(node);
+        tree.addNode(node2);
 
-        tree.AddpPerson(node3);
-        tree.AddpPerson(node4);
+        tree.addNode(node3);
+        tree.addNode(node4);
 
         tree.inorder(node);
         System.out.println("//********/////////");
